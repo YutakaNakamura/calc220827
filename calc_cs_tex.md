@@ -90,7 +90,7 @@ $$
 (K+1)(\gamma - \overline\delta) + (K-1)(\overline\gamma + \delta) =& (K+1)^2L_i e^{i\theta_e} -(K-1)^2L_i e^{-i\theta_e} + (K+1)(K-1)L_m e^{i2\theta_\gamma}(e^{i\theta_e} - e^{-i\theta_e})\\
 \end{aligned}
 $$
-(単純な)実数係数では、$L_me^{i2\theta_\gamma}$が除去できない。
+実数係数では、$L_me^{i2\theta_\gamma}$が除去できない。
 複素数$e^{i\theta_e}$を乗じて除去する。
 $$
 \begin{aligned}
@@ -156,7 +156,7 @@ print("@calculate atan my expr")
 print(simplify_atan(sy, y, x))
 ```
 ## 出力
-arctanでθが出るような値にならない。おかしい。
+arctanでθが出るような値にならない、おかしい。どこかで間違っているのだろうか。
 
 @calculate 220827-2 my expr
 @x
@@ -170,4 +170,5 @@ MacBook-Air:calc220827 watashi$
 # オンライン検証
 paizaに簡単に検証できる場所を作った。
 https://paiza.io/projects/HXA4KsZ6yvzAVFsMGdVaEQ
-ただし、計算量が多く、複雑な検証ができない。ローカル環境で検証するのがよい。
+ただし、paizaには時間制限があることと、sympyを利用した代数計算は計算量が多いため、複雑な式はタイムアウトしてしまい検証ができない。
+そのため、ローカル環境で検証するのがよい。
