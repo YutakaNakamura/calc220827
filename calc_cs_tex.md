@@ -3,12 +3,8 @@
 $$
 \begin{aligned}
 c_\gamma =& 2 A (- K L_m \sin{(2 \theta_{\gamma} )} \sin{(\theta_{e} )} + (L_i - L_m \cos{(2 \theta_{\gamma} )}) \cos{(\theta_{e} )})\\
-
 s_\gamma =& 2 A (K L_m \sin{(2 \theta_{\gamma} )} \cos{(\theta_{e} )} + (L_i - L_m \cos{(2 \theta_{\gamma} )}) \sin{(\theta_{e} )})\\
-
-
 c_\delta =& 2 A (- L_m \sin{(2 \theta_{\gamma} )} \sin{(\theta_{e} )} - ( K L_i + K L_m \cos{(2 \theta_{\gamma} )}) \cos{(\theta_{e} )})\\
-
 s_\delta =& 2 A (- L_m \sin{(2 \theta_{\gamma} )} \cos{(\theta_{e} )} + (K L_i + K L_m \cos{(2 \theta_{\gamma} )}) \sin{(\theta_{e} )})
 \end{aligned}
 $$
@@ -18,9 +14,7 @@ K=0のとき
 $$
 \begin{aligned}
 c_\gamma =& 2 A ((L_i - L_m \cos{(2 \theta_{\gamma} )}) \cos{(\theta_{e} )})\\
-
 s_\gamma =& 2 A ((L_i - L_m \cos{(2 \theta_{\gamma} )}) \sin{(\theta_{e} )})\\
-
 \theta_e =& \tan^{-1}{\frac{s_\gamma}{c_\gamma}}
 \end{aligned}
 $$
@@ -28,17 +22,11 @@ K=1のとき
 $$
 \begin{aligned}
 c_\gamma =& 2 A (- L_m \sin{(2 \theta_{\gamma} )} \sin{(\theta_{e} )} + (L_i - L_m \cos{(2 \theta_{\gamma} )}) \cos{(\theta_{e} )})\\
-
 s_\gamma =& 2 A ( L_m \sin{(2 \theta_{\gamma} )} \cos{(\theta_{e} )} + (L_i - L_m \cos{(2 \theta_{\gamma} )}) \sin{(\theta_{e} )})\\
-
-
 c_\delta =& 2 A (- L_m \sin{(2 \theta_{\gamma} )} \sin{(\theta_{e} )} - ( L_i + L_m \cos{(2 \theta_{\gamma} )}) \cos{(\theta_{e} )})\\
-
 s_\delta =& 2 A (- L_m \sin{(2 \theta_{\gamma} )} \cos{(\theta_{e} )} + ( L_i + L_m \cos{(2 \theta_{\gamma} )}) \sin{(\theta_{e} )})\\
-
 c_\gamma - c_\delta =& 2 A ( ( 2 L_i ) \cos{(\theta_{e} )})\\
 s_\gamma + s_\delta =& 2 A ( ( 2 L_i ) \sin{(\theta_{e} )})\\
-
 \theta_e =& \tan^{-1}{\frac{s_\gamma + s_\delta}{c_\gamma - c_\delta}}
 \end{aligned}
 $$
@@ -49,19 +37,14 @@ $$
 $$
 \begin{aligned}
 c_\gamma =& 2 A ( (L_i - L_m \cos{(2 \theta_{\gamma} )}) \cos{(\theta_{e} )} + K L_m \sin{(2 \theta_{\gamma} )} (-\sin{(\theta_{e} )}))\\
-
 s_\gamma =& 2 A ((L_i - L_m \cos{(2 \theta_{\gamma} )}) \sin{(\theta_{e} )}+K L_m \sin{(2 \theta_{\gamma} )} \cos{(\theta_{e} )}  )\\
-
-
 c_\delta =& 2 A (- K ( L_i + L_m \cos{(2 \theta_{\gamma} )}) \cos{(\theta_{e} )}- L_m \sin{(2 \theta_{\gamma} )} \sin{(\theta_{e} )} )\\
-
 s_\delta =& 2 A (- K (L_i + L_m \cos{(2 \theta_{\gamma} )}) (-\sin{(\theta_{e} )}) - L_m \sin{(2 \theta_{\gamma} )} \cos{(\theta_{e} )} )
 \end{aligned}
 $$
 $$
 \begin{aligned}
 \gamma = \frac{1}{2A} (c_\gamma + js_\gamma) =& ( L_i - L_m \cos{(2 \theta_{\gamma} )}  + jK L_m \sin{(2 \theta_{\gamma} )} ) e^{i\theta_e}\\
-
 \delta = \frac{1}{2A} (c_\delta + js_\delta) =& ( - K(L_i + L_m \cos{(2 \theta_{\gamma} )}) - j L_m \sin{(2 \theta_{\gamma} )} ) e^{-i\theta_e}
 \end{aligned}
 $$
@@ -70,7 +53,6 @@ $$
 $$
 \begin{aligned}
 \overline\gamma =& ( L_i - L_m \cos{(2 \theta_{\gamma} )}  - jK L_m \sin{(2 \theta_{\gamma} )} ) e^{-i\theta_e}\\
-
 \overline\delta =& ( - K(L_i + L_m \cos{(2 \theta_{\gamma} )}) + j L_m \sin{(2 \theta_{\gamma} )} ) e^{i\theta_e}
 \end{aligned}
 $$
@@ -84,10 +66,8 @@ $$
 \\
 \overline\gamma + \delta =& ( L_i - L_m \cos{(2 \theta_{\gamma} )}  - jK L_m \sin{(2 \theta_{\gamma} )} ) e^{-i\theta_e}\\
 & +  ( - K(L_i + L_m \cos{(2 \theta_{\gamma} )}) - j L_m \sin{(2 \theta_{\gamma} )} ) e^{-i\theta_e}\\
-
 =&( (-K+1)L_i - (K+1) L_m(\cos{2 \theta_\gamma}+j\sin{2\theta_\gamma}))e^{-i\theta_e}\\
 =&( (-K+1)L_i - (K+1) L_m e^{i2\theta_\gamma})e^{-i\theta_e}\\
-
 \end{aligned}
 $$
 $L_m(e^{i2\theta_\gamma})$を除去する。
@@ -136,7 +116,6 @@ $$
 \frac{1}{2A} (K-1) ((c_\gamma + c_\delta) + j(s_\delta - s_\gamma) )e^{i\theta_e} \\
 & = \frac{1}{2A} (K+1) ( (c_\gamma - c_\delta) + j(s_\gamma + s_\delta) ) (\cos{\theta_e} - j\sin{\theta_e}) + 
 \frac{1}{2A} (K-1) ((c_\gamma + c_\delta) + j(s_\delta - s_\gamma) ) (\cos{\theta_e} + j\sin{\theta_e}) \\
-
 & = \frac{1}{2A} (K+1) ( ( (c_\gamma - c_\delta)\cos{\theta_e} + (s_\gamma + s_\delta)\sin{\theta_e} ) + j((s_\gamma + s_\delta)\cos{\theta_e} - (c_\gamma - c_\delta)\sin{\theta_e} ) ) \\
 &+ \frac{1}{2A} (K-1) ( ( (c_\gamma + c_\delta)\cos{\theta_e} - (s_\gamma - s_\delta)\sin{\theta_e} ) + j((s_\gamma - s_\delta)\cos{\theta_e} + (c_\gamma + c_\delta)\sin{\theta_e} ) ) \\
 \end{aligned}
@@ -145,10 +124,11 @@ $$
 $$
 \begin{aligned}
 & \frac{1}{2A} (K+1) (j((s_\gamma + s_\delta)\cos{\theta_e} - (c_\gamma - c_\delta)\sin{\theta_e} )) \\
-+ & \frac{1}{2A} (K-1) (j((s_\gamma - s_\delta)\cos{\theta_e} + (c_\gamma + c_\delta)\sin{\theta_e} )) = 0
++&\frac{1}{2A} (K-1) (j((s_\gamma - s_\delta)\cos{\theta_e} + (c_\gamma + c_\delta)\sin{\theta_e} )) = 0
 \end{aligned}
 $$
 
 $$
-\frac{1}{A} j (Ks_\gamma + s_\delta) \cos{\theta_e} + \frac{1}{A} j (K c_\delta - c_\gamma) \cos{\theta_e} = 0
+\frac{1}{A} j (Ks_\gamma + s_\delta) \cos{\theta_e} + \frac{1}{A} j (K c_\delta - c_\gamma) \sin{\theta_e} = 0\\
+\frac{\sin{\theta_e}}{\cos{\theta_e}} = -\frac{Ks_\gamma + s_\delta}{K c_\delta - c_\gamma}
 $$

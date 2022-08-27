@@ -126,45 +126,53 @@ s_gammat = s_pt - s_nt
 c_deltat = -c_pt + c_nt
 s_deltat = -(-s_pt - s_nt)
 
-print("gamma delta expr")
-print("@c_gamma tilde")
-print( simplify_collect(sy,c_gammat,sy.cos(theta_e)) )
-print("@s_gamma tilde")
-print( simplify_collect(sy,s_gammat,sy.sin(theta_e)) )
-print("@c_delta tilde")
-print( simplify_collect(sy,c_deltat,sy.cos(theta_e)) )
-print("@s_delta tilde")
-print( simplify_collect(sy,s_deltat,sy.sin(theta_e)) )
+# print("gamma delta expr")
+# print("@c_gamma tilde")
+# print( simplify_collect(sy,c_gammat,sy.cos(theta_e)) )
+# print("@s_gamma tilde")
+# print( simplify_collect(sy,s_gammat,sy.sin(theta_e)) )
+# print("@c_delta tilde")
+# print( simplify_collect(sy,c_deltat,sy.cos(theta_e)) )
+# print("@s_delta tilde")
+# print( simplify_collect(sy,s_deltat,sy.sin(theta_e)) )
 
-print("gamma K=0")
-y = s_gammat.subs(K, 0)
-x = c_gammat.subs(K, 0)
+# print("gamma K=0")
+# y = s_gammat.subs(K, 0)
+# x = c_gammat.subs(K, 0)
+# print(simplify_atan(sy, y, x))
+
+# print("delta K=0")
+# y = s_deltat.subs(K, 0)
+# x = c_deltat.subs(K, 0)
+# print(simplify_atan(sy, y, x))
+
+# print("gamma delta atan")
+# y = sy.factor(c_gammat)
+# x = sy.factor(s_gammat)
+# print(simplify_atan(sy, y, x))
+
+# # 検算する
+# print("calculate 220827-1")
+# y = K*s_deltat - s_gammat
+# x = -K*c_deltat + c_gammat
+# print(sy.simplify(x))
+# print(sy.simplify(y))
+# print("calculate atan t")
+# print(simplify_atan(sy, y, x))
+
+print("@calculate 220827-2 my expr")
+y = -(K*s_gammat + s_deltat)
+x = K*c_deltat + c_gammat
+print(simplify_collect(sy,x,sy.cos(theta_e)))
+print(simplify_collect(sy,y,sy.sin(theta_e)))
+print("@calculate atan my expr")
 print(simplify_atan(sy, y, x))
 
-print("delta K=0")
-y = s_deltat.subs(K, 0)
-x = c_deltat.subs(K, 0)
-print(simplify_atan(sy, y, x))
+# print("calculate 220827-2 my expr zikkenn")
+# ta = -K*c_deltat + c_gammat
+# tb =  K*s_gammat + s_deltat
 
-print("gamma delta atan")
-y = sy.factor(c_gammat)
-x = sy.factor(s_gammat)
-print(simplify_atan(sy, y, x))
-
-# 検算する
-print("calculate 220827-1")
-y = K*s_deltat - s_gammat
-x = -K*c_deltat + c_gammat
-print(sy.simplify(x))
-print(sy.simplify(y))
-print("calculate atan t")
-print(simplify_atan(sy, y, x))
-
-print("calculate 220827-2 my expr")
-y = - K*c_deltat - c_gammat
-x = K*s_gammat + s_deltat
-print(sy.simplify(x))
-print(sy.simplify(y))
-print("calculate atan t")
-print(simplify_atan(sy, y, x))
-
+# ta = simplify_collect(sy,ta,sy.cos(theta_e))
+# tb = simplify_collect(sy,tb,sy.sin(theta_e))
+# print(sy.simplify(ta))
+# print(sy.simplify(tb))
