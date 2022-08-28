@@ -100,8 +100,9 @@ $$
 (K+1)(\gamma - \overline\delta)e^{-i\theta_e} + (K-1)(\overline\gamma + \delta)e^{i\theta_e} =& (K+1)^2L_i  -(K-1)^2L_i  = 4KL_i\\
 \end{aligned}
 $$
-この式は実部しか持たない事が分かった。
+この式は実数となる事が分かった。
 ## 虚部の係数比較
+虚部が0であることを利用する。
 $$
 \begin{aligned}
 \gamma = \frac{1}{2A} (c_\gamma + js_\gamma)\\
@@ -122,7 +123,7 @@ $$
 &+ \frac{1}{2A} (K-1) ( ( (c_\gamma + c_\delta)\cos{\theta_e} - (s_\gamma - s_\delta)\sin{\theta_e} ) + j((s_\gamma - s_\delta)\cos{\theta_e} + (c_\gamma + c_\delta)\sin{\theta_e} ) ) \\
 \end{aligned}
 $$
-虚部が値を持たない事に着目する。
+虚部のみを計算する。
 $$
 \renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
@@ -134,7 +135,9 @@ $$
 $$
 
 $$
-\Leftrightarrow \frac{1}{A} j (Ks_\gamma + s_\delta) \cos{\theta_e} + \frac{1}{A} j (K c_\delta - c_\gamma) \sin{\theta_e} = 0\\
+\Leftrightarrow \frac{1}{A} j (Ks_\gamma + s_\delta) \cos{\theta_e} + \frac{1}{A} j (K c_\delta - c_\gamma) \sin{\theta_e} = 0
+$$
+$$
 \Leftrightarrow \frac{\sin{\theta_e}}{\cos{\theta_e}} = -\frac{Ks_\gamma + s_\delta}{K c_\delta - c_\gamma}
 $$
 よって、
@@ -146,8 +149,8 @@ $$
 # python + sympyで検算
 ```python
 print("@calculate 220827-2 my expr")
-y = -(K*s_gammat + s_deltat)
-x = K*c_deltat + c_gammat
+y = -(K*s_deltat + s_gammat)
+x = K*c_deltat - c_gammat
 print("@x")
 print(simplify_collect(sy,x,sy.cos(theta_e)))
 print("@y")
@@ -156,19 +159,18 @@ print("@calculate atan my expr")
 print(simplify_atan(sy, y, x))
 ```
 ## 出力
-arctanでθが出るような値にならない、おかしい。どこかで間違っているのだろうか。
-
 @calculate 220827-2 my expr
 @x
-2*A*(-2*K*Lm*sin(theta_e)*sin(2*theta_gamma) + (-K**2*Li - K**2*Lm*cos(2*theta_gamma) + Li - Lm*cos(2*theta_gamma))*cos(theta_e))
+2*A*(-K**2*Li - K**2*Lm*cos(2*theta_gamma) - Li + Lm*cos(2*theta_gamma))*cos(theta_e)
 @y
-2*A*(-K**2*Lm*sin(2*theta_gamma)*cos(theta_e) - 2*K*Li*sin(theta_e) + Lm*sin(2*theta_gamma)*cos(theta_e))
+2*A*(-K**2*Li - K**2*Lm*cos(2*theta_gamma) - Li + Lm*cos(2*theta_gamma))*sin(theta_e)
 @calculate atan my expr
-atan(K**2*Lm*sin(2*theta_gamma)*cos(theta_e)/(K**2*Li*cos(theta_e) + K**2*Lm*cos(theta_e)*cos(2*theta_gamma) + 2*K*Lm*sin(theta_e)*sin(2*theta_gamma) - Li*cos(theta_e) + Lm*cos(theta_e)*cos(2*theta_gamma)) + 2*K*Li*sin(theta_e)/(K**2*Li*cos(theta_e) + K**2*Lm*cos(theta_e)*cos(2*theta_gamma) + 2*K*Lm*sin(theta_e)*sin(2*theta_gamma) - Li*cos(theta_e) + Lm*cos(theta_e)*cos(2*theta_gamma)) - Lm*sin(2*theta_gamma)*cos(theta_e)/(K**2*Li*cos(theta_e) + K**2*Lm*cos(theta_e)*cos(2*theta_gamma) + 2*K*Lm*sin(theta_e)*sin(2*theta_gamma) - Li*cos(theta_e) + Lm*cos(theta_e)*cos(2*theta_gamma)))
-MacBook-Air:calc220827 watashi$ 
+atan(tan(theta_e))
+
+値が正しい事が確認できた。
 
 # オンライン検証
 paizaに簡単に検証できる場所を作った。
-https://paiza.io/projects/HXA4KsZ6yvzAVFsMGdVaEQ
+https://paiza.io/projects/jVVmL3gQZOfjTWiBze6vFw
 ただし、paizaには時間制限があることと、sympyを利用した代数計算は計算量が多いため、複雑な式はタイムアウトしてしまい検証ができない。
 そのため、ローカル環境で検証するのがよい。

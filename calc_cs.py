@@ -161,8 +161,8 @@ print("calculate atan t")
 print(simplify_atan(sy, y, x))
 
 print("@calculate 220827-2 my expr")
-y = -(K*s_gammat + s_deltat)
-x = K*c_deltat + c_gammat
+y = -(K*s_deltat + s_gammat)
+x = K*c_deltat - c_gammat
 print("@x")
 print(simplify_collect(sy,x,sy.cos(theta_e)))
 print("@y")
